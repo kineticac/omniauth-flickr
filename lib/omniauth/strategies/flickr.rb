@@ -70,6 +70,10 @@ module OmniAuth
       def request_phase
         options[:authorize_params] = {:perms => options[:scope]} if options[:scope]
         puts options.to_yaml
+        flickr ||= nil
+        if flickr
+          puts flickr.to_yaml
+        end
         super
       end
     end
